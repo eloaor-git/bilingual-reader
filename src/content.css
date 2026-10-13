@@ -1,0 +1,55 @@
+/* 译文块样式。
+   必须通过 manifest 声明注入：Google 页面有 CSP，往 DOM 里插 <style> 可能被拦掉。 */
+
+.bt-trans {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  margin: 6px 0 10px;
+  padding: 1px 0 1px 10px;
+  border-left: 3px solid #4c8bf5;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* 小块的隐式翻译：平时不占版面，悬停时才提示。
+   data-bt-hover 的元素由 content.js 在鼠标悬停时挂出气泡。 */
+[data-bt-hover] {
+  cursor: help;
+}
+
+[data-bt-hover]:hover {
+  text-decoration: underline dotted rgba(76, 139, 245, 0.75);
+  text-underline-offset: 2px;
+}
+
+.bt-tip {
+  position: fixed;
+  z-index: 2147483647;
+  max-width: min(460px, 80vw);
+  padding: 7px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(140, 149, 159, 0.35);
+  color: #1f2328;
+  font: 400 13px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+/* 「只看译文」模式：隐藏被翻译过的原文块。
+   隐式翻译的小块除外——它们本来就没占版面，藏掉反而没法悬停查看。 */
+html.bt-only [data-bt]:not([data-bt-hover]) {
+  display: none !important;
+}

@@ -1,0 +1,163 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 12px 14px 10px;
+  font: 13px/1.5 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #1f2328;
+  background: #fff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+header .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #4c8bf5;
+}
+
+h1 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+button#toggle {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #4c8bf5;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button#toggle:hover {
+  background: #3b7ae4;
+}
+
+button#toggle:disabled {
+  background: #c8ccd2;
+  cursor: not-allowed;
+}
+
+p#status {
+  margin: 8px 0 12px;
+  text-align: center;
+  color: #6a737d;
+  font-size: 12px;
+}
+
+button.secondary {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background: #fff;
+  color: #4c8bf5;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+section.engine {
+  margin: 0 0 10px;
+  padding: 8px 10px 10px;
+  border: 1px solid #eaedf1;
+  border-radius: 8px;
+  background: #fbfcfd;
+}
+
+p.note {
+  margin: 4px 0 8px;
+  color: #6a737d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.fields .field {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.fields .field span {
+  display: block;
+  margin-bottom: 2px;
+  color: #6a737d;
+  font-size: 11px;
+}
+
+.fields input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font: 12px/1.4 ui-monospace, Consolas, monospace;
+  color: inherit;
+}
+
+button.secondary:hover {
+  background: #f3f6fb;
+}
+
+pre#diagout {
+  margin: 8px 0 0;
+  padding: 8px;
+  border-radius: 6px;
+  background: #f6f8fa;
+  color: #24292f;
+  font: 11px/1.5 ui-monospace, Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 180px;
+  overflow: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.row input[type="checkbox"] {
+  margin: 0;
+  order: 2;
+}
+
+.row input[type="checkbox"] + span {
+  order: 1;
+}
+
+select {
+  padding: 3px 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  color: inherit;
+}
+
+footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #eaedf1;
+  color: #8b949e;
+  font-size: 11px;
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "bilingual-reader",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "浏览器双语对照翻译扩展：追加式译文、可插拔引擎、按语义判断该翻什么",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test:unit": "node tests/test.mjs && node tests/providers.test.mjs",
+    "test:e2e": "node tests/e2e.mjs",
+    "test": "node tests/test.mjs && node tests/providers.test.mjs && node tests/e2e.mjs",
+    "check:endpoint": "node tests/check-endpoint.mjs"
+  }
+}

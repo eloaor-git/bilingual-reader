@@ -1,0 +1,3 @@
+# 统一换行，避免 Windows 上签出后整个仓库"全变了"
+* text=auto eol=lf
+*.zip binary

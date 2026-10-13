@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "双语对照翻译",
+  "version": "0.3.0",
+  "description": "在网页原文块下方追加译文，原文保留，一键开关。默认只在 Google 搜索页就位。",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": [
+    "https://translate.googleapis.com/*",
+    "https://translate.google.com/*",
+    "https://clients5.google.com/*",
+    "https://api.mymemory.translated.net/*",
+    "https://fanyi-api.baidu.com/*",
+    "https://api.interpreter.caiyunai.com/*",
+    "https://api-free.deepl.com/*",
+    "https://api.deepl.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "双语对照翻译"
+  },
+  "commands": {
+    "toggle-translate": {
+      "suggested_key": { "default": "Alt+T" },
+      "description": "翻译 / 还原当前页面"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*",
+        "*://*.google.com.hk/*",
+        "*://*.google.com.tw/*",
+        "*://*.google.co.jp/*"
+      ],
+      "exclude_matches": [
+        "*://docs.google.com/*",
+        "*://mail.google.com/*",
+        "*://drive.google.com/*",
+        "*://photos.google.com/*",
+        "*://accounts.google.com/*",
+        "*://calendar.google.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

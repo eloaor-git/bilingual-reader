@@ -1,0 +1,19 @@
+{
+  "name": "bilingual-reader-tests",
+  "private": true,
+  "version": "0.1.0",
+  "description": "jsdom 回归测试：直接跑 src/content.js，验证选块、渲染与还原",
+  "type": "module",
+  "scripts": {
+    "test": "node test.mjs",
+    "test:providers": "node providers.test.mjs",
+    "test:e2e": "node e2e.mjs",
+    "check:endpoint": "node check-endpoint.mjs"
+  },
+  "dependencies": {
+    "jsdom": "^30.1.1"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0"
+  }
+}
